@@ -1,0 +1,179 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kaushan+Script&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap'); /*adicionando uma fonte do google fonts*/
+
+@font-face { 
+    font-family:"Android";/*adicionando uma fonte do do arquivo do projeto*/
+    src: url("../fontes/idroid.otf") format("opentype");
+    font-weight: normal;
+}
+
+:root { /*uma variael que eu posso adicionar cor, texto, etc*/
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: "Bebas neue", cursive;
+    --fonte-android: "Android", cursive;
+}
+* { /*comandos globais*/
+    margin: 0px; /*para deixar a margin do projeto todo em 0px*/
+    padding: 0px; /*para deixar o padding do projeto todo em 0px*/
+}
+body{
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+}
+.pequena{
+    max-width: 350px; /* para o maior tamanho possivel da imagem em relação a largura ser 350px*/
+    display: block; /*para passar a inline-level para box-level*/
+    margin: auto;
+}
+.externo::after{ /*uma class para adicionar o emoji do link na frente de link externo*/
+    content: "\00a0\1f517"; /*espaçamento "\00a0" e o emoji "\1f517"*/
+}
+.video{ /*class para formatação do video*/
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 59.5%;
+    position: relative;
+}
+div > iframe{ /*class para formatação do video*/
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    width: 94%;
+    height: 90%;
+}
+header{
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));/* para fazer um degrade de cores na cor de fundo*/
+    text-align: center; /* todo texto ficar no meio do header*/
+    min-height: 150px; /* o minímo da altura entre os box-level ser 130px*/
+    padding-top: 40px; /* a distancia do box level a parte de cima do site*/
+}
+header > h1{
+    color: white;
+    font-family: var(--fonte-destaque);
+    margin-bottom: 20px; /* a margem de baixo do titulo ser 10px*/
+    font-size: 3em; /* a fonte ser 3 vezes maior doque o tamanho normal*/
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.315); /* sombra entre o Titulo para dar destaque*/
+    font-weight: normal;
+}
+header > p{
+    color: white;
+    font-size: 1.2em;
+    font-family: var(--fonte-padrao);
+    max-width: 600px; /* a distancia das laterais do paragrafos ser 600px*/
+    padding-right: 5px; /* ter uma pequena distancia do paragrafo em relação a direita da margem*/
+    padding-left: 5px; /* ter uma pequena distancia do paragrafo em relação a esquerda da margem*/
+    margin: auto; /* para margem ser auto e se adptar ao tamanho da box-level*/
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.315); /* sombra entre o paragrafo para dar destaque*/
+    margin-bottom: 30px;
+}
+nav{
+    background-color: var(--cor5);
+    padding: 10px; /* distanciar o "a" da margem da "nav" */
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.247); /* colocar uma sombra entre o header e o main*/
+
+}
+nav > a{
+    color: var(--cor1);
+    text-decoration: none; /*tirar a linha de link*/
+    padding: 10px; /*distanciar os menus*/
+    font-weight: bold; /*deixar o texto em negrito*/
+    border-radius: 5px; /*deixar arredondada a borda*/
+    transition-duration: 0.5s; /*ter um delay ao passar o mouse no menu*/
+    
+}
+nav > a:hover{
+    transition: 0.7s;/*para ter uma transição em animação quando passar o mouse encima*/
+    background-color: var(--cor3);/*ao passar o mouse encima mudará a cor por causa do :hover*/
+    color: var(--cor5);/*ao passar o mouse encima mudará a cor por causa do :hover*/
+}
+main{
+    background-color: white;
+    min-width: 300px; /* o minimo de resolução do main para não quebrar as palavras nem imagens */
+    max-width: 1000px; /* o maximo de resolução do main para não quebrar as palavras nem imagens */
+    margin: auto; /* para deixar as coisas no meio do main */
+    margin-bottom: 30px; /* para não encostar o main no footer(rodapé) */
+    padding: 20px; /* para dar um espaçamento das coisas no main*/
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.459); /* colocou uma borda no main para ficar mais visivel*/
+    border-bottom-left-radius: 10px; /* adicionou um arredondamento na parte baixa a esquerda*/
+    border-bottom-right-radius: 10px; /* adicionou um arredondamento na parte baixa a direita*/
+}
+main p{
+    padding: 15px 0px; /*adicionando espaçamento em baixo e encima e 0 espaçamento aos lados*/
+    text-align: justify; /*para ficar organizado o texto em ambos lados*/
+    text-indent: 30px; /*é o espaçamento antes da primeira palavra, que sinaliza um novo paragrafo*/
+    line-height: 2em; /*adiciona um espaçammento entre as linhas para não ficar muito embolado para leitura*/
+}
+main strong{
+    color: var(--cor5);
+    font-weight: bold; /* para o texto dentro de strong ficar em negrito*/
+}
+main a{
+    text-decoration: none; /*tirar a linha de link*/
+    font-weight: bold; /* para o texto dentro de strong ficar em negrito*/
+    color: var(--cor5); 
+    background-image: linear-gradient(to right, var(--cor2), var(--cor1)); /* para fazer um degrade de cores na cor de fundo*/
+    padding: 2px 5px; /* para ter espaçamento de 2px encima e embaixo e 5px na direita e esquerda*/
+}
+main a:hover{
+    text-decoration: underline;
+}
+main h1{
+    color: var(--cor5);
+    font-weight: normal;
+    font-family: var(--fonte-android);
+    font-size: 1.8em; /* tamanho da fonte*/
+}
+main h2{
+    font-family: var(--fonte-android);
+    color: var(--cor4);
+    font-size: 1.3em; /* tamanho da fonte*/
+    font-weight: normal;
+    background-image: linear-gradient(to right, var(--cor1), transparent); /* para fazer um degrade de cores na cor de fundo*/
+}
+main img{
+    width: 100% ; /*para imagem ficar ocupando 100% da largura*/
+}
+aside{
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px; /*colocara arredondamento em todas as bordas*/
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.274);
+}
+aside > h3{
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px; /* para adicionar espçamento do h3*/
+    margin: -10px -10px 0px -10px; /* esses numeros negativos é para borda crescer para fora, sendo ao contrario*/
+    border-radius: 10px 10px 0px 0px; /*para adicionar borda cima esquerda e cima direita arredondada*/
+
+}
+aside > ul{
+    list-style-type: "\2714\00a0\00a0"; /* "\2714" para colocar um emoji no lugar das bolinhas da tabela e "\00a0\00a0"" para adicionar um espaçamento do emoji ate o texto li*/
+    list-style-position: inside; /*para ficar dentro do aside as bolinhas da lista*/
+    columns: 2; /* o numero de colunas que voce quer que sua tabela tem*/
+}
+footer{
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;/* para colocar o texto do footer ao meio*/
+    padding: 5px; /* para dar 5px de espaçamento de padding*/
+    font-size: 0.8em; /* tamanho da fonte*/
+}
+footer a{
+    font-weight: bolder; 
+    color: white;
+    text-decoration: none; /*tirar a linha de link*/
+}
+footer a:hover{
+    text-decoration: underline; /*colocar a linha de link*/
+    color: var(--cor1);
+}
